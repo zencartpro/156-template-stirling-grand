@@ -1,0 +1,14 @@
+.cssButton, .cssButtonHover, .more-info {width:20em;background-color:#1d1d1e;color:#fffffd;border:1px solid #1d1d1d;text-transform:uppercase;font-size:100%;text-align:center;white-space:nowrap;text-decoration:none;font-weight:normal;padding:0.8em 1.2em;}
+.more-info{width:60px;margin:0 auto;}
+.more-info:hover{background:#a0a0a0;}
+.cssButtonHover {color:#000;background:#a0a0a0;text-decoration: none;border:1px solid #0a0a0a;}
+.small_delete, .button_prev, .button_next, .button_search  {width: 7em;}
+.button_sold_out_sm, .button_sold_out, .button_update_cart, .button_checkout, .button_login {width: 10em;}
+.button_return_to_product_list, .button_add_selected {width: 22em;}
+.button_submit {width: 18em;}
+.button_update_cart {height:32px;}
+.button_update_cartHover {height:32px;color: red;}
+.button_goto_prod_details{}
+.button_in_cart{width:160px !important;font-size:120% !important;background:#444;height:40px;}
+.button_in_cartHover{background:#a0a0a0;}
+.button_add_selected{width:200px !important;}

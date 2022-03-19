@@ -1,0 +1,1429 @@
+<!--Force IE6 into quirks mode with this comment tag-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Stirling Grand Free Zen Cart Template</title>
+<style type="text/css">
+
+body{margin: 0;padding: 0;border: 0;overflow: hidden;height: 100%;max-height: 100%;font-family: "Century Gothic", sans-serif;color:#666;}
+a:hover{color:#60bbfb;}
+#framecontent{position: absolute;top: 0;left: 0;width: 100%;height: 180px; overflow: visible;background-color: #fff;color: #444;}
+#maincontent{position: fixed;top: 180px;left: 0;right: 0;bottom: 0;overflow: auto;background: #fff;border-top:5px solid #3f3830;font-size:90%;z-index:-1;}
+.innertube{margin: 15px; /*Margins for inner DIV inside each DIV (to provide padding)*/width:950px;margin:0 auto;}
+* html body{ /*IE6 hack*/padding: 130px 0 0 0; /*Set value to (HeightOfFrameDiv 0 0 0)*/}
+* html #maincontent{ /*IE6 hack*/height: 100%;width: 100%;}
+#maincontent a{text-decoration:none;color:#332c26;}
+#top-menu{background:#3f3830;}
+.dd_menu {padding:0px; width:950px;margin:0 auto; list-style-type:none; height:30px;}
+.dd_menu li {float:left; height:30px; border-right: solid 1px #767574;}
+.dd_menu li a {padding:9px 20px; display:block; color:#fffffd; text-decoration:none; font:12px arial, verdana, sans-serif; font-weight: bold;}
+.dd_menu li:hover a {text-decoration:none;color:#444443;}
+.dd_menu ul{position:absolute; left:-9999px; top:-9999px; list-style-type:none;}
+.dd_menu li:hover {position:relative; background:#ebecf0;}
+.dd_menu li:hover ul {left:0px; top:30px; background:#ebecf0; padding:3px; border:1px solid grey; width:250px;}
+.dd_menu li:hover ul li {height:28px; border:none;}
+.dd_menu li:hover ul li a {height:18px; padding:0px; display:block; font-size:11px; width:250px; line-height:18px; text-indent:5px; color:#444; background-color:#ebecf0; text-decoration:none; border:1px solid transparent;}
+.dd_menu li:hover ul li a:hover {height:28px; background:#3f3830; color:#fff; border:solid 0px #444;}
+.dd_menu li ul ul {margin: -2em 0 0 15em;}
+.dd_menu li:hover ul ul, .dd_menu li.sfhover ul ul {left: -999em;}
+.dd_menu li:hover ul, .dd_menu li li:hover ul, .dd_menu li.sfhover ul, .dd_menu li li.sfhover ul {left: auto;}
+.wrapper{border-bottom:1px solid #ccc;padding-bottom:20px;}
+#demo-shots{float:right;width:375px;margin-top:-15px;margin-bottom:15px;}
+.clearBoth{clear:both;}
+.left{float:left; width:450px;line-height:25px;}
+h1{font-size:22px;font-weight:400;line-height:28px;}
+h1 a{color:#444;text-decoration:none;}
+.border-left{border-bottom:1px solid #ccc;padding-left:15px;padding-bottom:5px;width:50%;margin-bottom:20px;margin-top:20px;padding-bottom:20px;}
+.border-left1{border-bottom:1px solid #ccc;padding-left:15px;padding-bottom:5px;}
+.icons{text-align:center;line-height:20px;margin-top:30px;margin-bottom:30px;}
+.icon-inner{text-align:center;line-height:20px;width:250px;float:left;margin-right:60px;}
+.centered-text, .center{text-align:center;}
+.centered-text img{margin-bottom:15px;}
+.bigger{font-size:120%;}
+.grey{background:#eaeaea;padding:20px;min-height:125px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px;margin-bottom:25px;}
+.right{width:400px;float:right;}
+.brown{float:left;padding:5px 10px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px;background:#2e2820;}
+.green{float:right;padding:5px 10px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px;background:#4f7931;}
+.green-video{padding:10px 15px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px;background:#4f7931;width:500px;text-align:center;}
+.green-donation{padding:10px 15px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px;background:#4f7931;width:350px;text-align:center;}
+.green-donation:hover, .green-video:hover, .brown:hover,.green:hover {background:#931414;}
+#maincontent .white a{color:#fffffd;}
+#table{background:#eaeaeb;-moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px;}
+.white-bk{background:#fff;padding:20px;-moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px;}
+.red{color:#931413;}
+.php-black{color:#000;}
+.php-green{color:#118542;}
+.php-blue{color:#0012ff;}
+.youtube{-moz-border-radius: 8px; -webkit-border-radius: 8px; border-radius: 8px;}
+</style>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>	
+<script type="text/javascript" src="jscript/jquery.easing.1.3.js"></script>
+<script type="text/javascript">
+            $(function() {
+                $('ul.nav a').bind('click',function(event){
+                    var $anchor = $(this);
+                    
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top
+                    }, 1500,'easeInOutExpo');
+                    /*
+                    if you don't want to use the easing effects:
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top-230)
+                    }, 1000);
+                    */
+                    event.preventDefault();
+                });
+            });
+        </script>
+
+
+</head>
+
+<body>
+
+<div id="framecontent">
+<div class="innertube">
+<a href="#top"><img src="http://www.picaflor-azul.com/pica/install/logo.jpg" alt="logo" /></a>
+</div>
+
+
+<div id="top-menu">
+<ul class="dd_menu">
+<li><a href="#seven">Features</a></li>
+<li><a href="#one">Support/Help</a></li>
+<li><a href="#two">Installation</a>
+<ul>
+		<li><a href="#ione">Pre-Installation (Don't Skip This!)</a>
+		  <ul>
+		    <li><a href="#ione">Backup Files & Database</a></li>
+		    <li><a href="#pre-one">Prepare Package for Upload</a></li>
+		  </ul>
+		</li>
+		<li><a href="#ithree">Step 1: SQL Patches</a></li>
+		<li><a href="#itwo">Step 2:  Upload the Files</a>
+		  <ul>
+		    <li><a href="#uone">Method 1:  FTP with Filezilla</a></li>
+		    <li><a href="#utwo">Method 2: CPanel File Manager</a></li>
+		  </ul>
+		</li>     
+		<li><a href="#ifour">Step 3: Select the Template</a></li>
+		<li><a href="#ifive">Step 4: Reset Sideboxes</a></li>
+		<li><a href="#ifive-a">Step 5: Show Box @ Min-Width</a></li>
+		<li><a href="#isix">Step 6: Turn On Header Boxes</a></li>
+		<li><a href="#iseven">Step 7: Admin Settings (These are Important)</a>
+		  <ul>
+		    <li><a href="#aone">Product Listing</a></li>
+		    <li><a href="#aten">Responsive Layout</a></li>
+		    <li><a href="#atwo">Layout Settings</a></li>
+		    <li><a href="#athree">EZ Pages Header Bar</a></li>
+		  </ul> 
+		 </li> 
+		<li><a href="#ieight">Step 8: Add Your Logo</a></li>
+		<li><a href="#inine">Step 9: Add Your Tag Line</a></li>
+		<li><a href="#iten">Step 10: Home Page Slideshow</a>
+		  <ul>
+		    <li><a href="#ieleven">Add Your Images and Links</a></li>
+		    <li><a href="#sstwo">Enable/Disable, Set Effect, Play & Pause</a></li>
+		  </ul>
+		</li>
+		<li><a href="#ieleven-a">Step 11: Customize Footer</a>
+		  <ul>
+		    <li><a href="#fone">Social Media</a></li>
+		    <li><a href="#ftwo">Customize Social Media Icons</a></li>
+		    <li><a href="#fthree">Remove Social Media Links</a></li>
+		     </ul> 
+		</li>  
+		<li><a href="#itwelve">Step 12: Add "Useful Links" to the Footer</a></li>
+		<li><a href="#ifourteen">Step 13: Mobile Device Header Menu</a></li>
+		<li><a href="#ifourteen-a">Step 14: Customize Header Menu</a>
+		  <ul>
+		    <li><a href="#htwo">Turn on Useful Links</a></li>
+		    <li><a href="#hfive">Hide any of the Drop Downs</a></li>
+		  </ul>  
+		</li>
+		<li><a href="#ififteen">Un-Install Instrutions</a></li>
+		<li><a href="#isixteen">Included Files</a></li>
+		<li><a href="#iseventeen">Easy Help Zen Cart Tutorials Index</a></li>
+</ul>
+</li>
+<li><a href="#four">Credits &amp; License</a></li>
+<li><a href="#five">Download Our Other Free Templates</a></li>
+<li><a href="#six">Bugs &amp; Updates</a></li>
+</ul>
+</div>
+
+</div>
+
+
+<div id="maincontent">
+<div class="innertube">
+
+
+<div class="wrapper">
+<div class="left">
+<div class="border-left1">
+       <h1 id="top">Stirling Grand Template</h1>
+Version: 1.0
+<br />
+<a href="http://www.picaflor-azul.com" target="_blank">Designed by Picaflor Azul Custom Zen Cart Design</a>
+</div>
+<table class="icons" cellpadding="10">
+<tr>
+<td>
+<a href="http://zenlyzen.com/responsive_demo/index.php?main_page=index&template_switch_id=stirling_grand" target="_blank"><img src="http://www.picaflor-azul.com/pica/install/demo.png" alt="demo" /><br />Live Demo</a>
+</td>
+<td>
+<a href="http://www.zen-cart.com/showthread.php?210386-Stirling-Grand-Responsive-Template"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/support.png" alt="support" /><br />Support</a>
+</td>
+<td>
+<a href="http://www.picaflor-azul.com/demos/install/readme/stirling_grand_readme.html"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/online-readme.png" alt="online readme" /><br />Live Readme</a>
+</td>
+<td>
+<a href="http://www.facebook.com/Custom.Zen.Cart.Design?sk=photos"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/fan-gallery.png" alt="fan gallery" /><br />Fan Gallery</a>
+</td>
+</tr>
+</table>
+<div class="grey">
+<p><a href="http://www.picaflor-azul.com/index.php?main_page=product_free_shipping_info&amp;cPath=159&amp;products_id=14857" target="_blank" >Donations are not required, but any size donation is greatly appreciated and accepted.</a>
+</p>
+<p class=" bigger white green-donation"><a href="http://www.picaflor-azul.com/index.php?main_page=product_free_shipping_info&amp;cPath=159&amp;products_id=14857"  target="_blank">Click here to make a donation.</a></p>
+<p>
+If you don't feel comfortable installing the template please feel free to contact me at <a href="mailto:info@picaflor-azul.com">info@picaflor-azul.com</a>.
+</p>
+</div>
+</div>
+<div id="demo-shots">
+<br /><br />
+<a href="http://zenlyzen.com/responsive_demo"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/stirling_grand.jpg" alt="demo"  /></a>
+</div>
+<br class="clearBoth" />
+<a href="http://www.youtube.com/user/ZenCartEasyHelp"  target="_blank" ><img class="subscribe" src="http://www.picaflor-azul.com/pica/install/subscribe.png" class="youtube" /></a>
+</div>
+
+
+<div class="wrapper">
+<div class="border-left">
+<h1 id="seven">Features</h1>
+A template packed with functionality
+</div>
+<div class="grey">
+				<ul>
+			<li>Super flexible design perfect for all types of ecommerce stores--the possibilites are endless!</li>
+			<li>Responsive 2 column display--single column home page layout</li>
+			<li>Optimized Drop Navigation for hand held devices</li>
+			<li>Matching icons included</li>
+			<li>CSS Buttons for easier multi language implementation</li>
+			<li>Responsive Home Page slideshow included</li>
+			<li>Add your slide show images, set their links, enable/disable images/links, and set open in new window easily using the admin banner manager. </li>
+			<li>Home page carousel for Featured Products</li>
+			<li>Add This social bookmarking added to all product pages (includes Facebook like button, Twitter Tweet Button, Pinterest Pin it button, and 300+ Sharing Services)</li>
+			<li>Custom footer featuring a footer menu with customer service, and useful links (ez pages), integrated, and links to your Facebook, Twitter, Youtube, Pinterest, Google Plus, and blog.</li>
+			<li>Customized product info page layout with expandable content areas for handheld devices</li>
+			<li>Cross Browser tested using Firefox, IE10, IE9, IE8, Google Chrome, Opera, and Safari.</li>
+			<li>Tested on the iPhone 5 with Mobile Safari 6.0; iPad 4 with Mobile Safari 6.0; Windows Phone 8 with IE10 Mobile; Blackberry Bold 9900 with Blackberry Browser 9900; and Android Nexus 4 with Chrome Mobile 18, Dolphin Mobile 9.3, Firefox Mobile 19, Marathon Mobile 4, Opera Mobile 12, Sleipnir Mobile 2.9 </li>
+			<li>W3C Valid XHTML and CSS</li>
+			<li>Custom header including shopping cart totals (item count and dollar amount), checkout link, search</li>
+			<li>Comes with the following modules installed:  Column Layout Grid, About Us Page, Back to Top, Responsive Slides JS, Carousel Featured Products</li>
+			<li>Detailed HTML readme file with written instructions and screenshots, and links to videos for the installation and customization steps.</li>
+			<li>Fully compatible with versions 1.5x.</li>
+		</ul>
+
+</div>
+</div>
+<div class="wrapper">
+<div class="border-left">
+<h1 id="one">Support/Help</h1>
+Free or personal support
+</div>
+<div class="icons">
+<div class="icon-inner">
+<a href="http://www.zen-cart.com/showthread.php?210386-Stirling-Grand-Responsive-Template"  target="_blank" ><img src="http://www.picaflor-azul.com/pica/install/support1.png" alt="support" /></a>
+<br /><br />
+<a href="http://www.zen-cart.com/showthread.php?210386-Stirling-Grand-Responsive-Template"   target="_blank">Free support is available through the support thread on the Zen Cart Forum</a>.
+</div>
+<div class="icon-inner">
+<a href="http://www.picaflor-azul.com/index.php?main_page=contact_us"   target="_blank"><img src="http://www.picaflor-azul.com/pica/install/email.png" alt="email" /></a>
+<br /><br />
+<a href="http://www.picaflor-azul.com/index.php?main_page=contact_us"  target="_blank" >For direct, personal support, email us for a quote</a>.
+</div>
+<div class="icon-inner">
+<a href="http://www.picaflor-azul.com/index.php?main_page=page&amp;id=43"   target="_blank"><img src="http://www.picaflor-azul.com/pica/install/faqs.png" alt="faqs" /></a>
+<br /><br />
+<a href="http://www.picaflor-azul.com/index.php?main_page=page&amp;id=43"  target="_blank" >Before asking any questions, check our FAQ's for your answer</a>.
+</div>
+<br class="clearBoth" />
+</div>
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+<h1 id="two" class="h1-color">The Complete Installation Guide</h1>
+<h1 id="ione">Pre-Installation: Backup Files & Database</h1>
+Don't skip this!
+</div>
+<div class="grey">
+
+<p class="green-video white">
+<a href="http://www.picaflor-azul.com/index.php?main_page=product_info&amp;cPath=99_106&amp;products_id=14637"   target="_blank">Watch an Easy Help Zen Cart Video Tutorial of this step HERE</a>
+</p>
+<p>
+<br />
+1. Go to your host cpanel and select the backup wizard:<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/install/backup-wizard.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="backup wizard Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+2. Click on Backup:<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/images/backup-wizard-2.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="backup wizard 2 Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+3. Click on Full Backup:<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/images/backup-wizard-3.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="backup wizard 3 Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+4. Click on Generate Backup:<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/images/backup-wizard-4.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="backup wizard 4 Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/images/backup-wizard-5.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="backup wizard 5 Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" />
+</div>
+
+<h1 id="pre-one">Prepare the Package for Upload</h1>
+<div class="grey">
+<p>
+Unzip the template package using your favorite unzip utility.
+</p>
+<p>
+In the template package go to stirling_grand/files
+</p>
+<p>
+Rename the folder YOUR_ADMIN_FOLDER to your admin folder name.
+</p>
+<p class="red">
+The YOUR_ADMIN_FOLDER/layout_controller file is a core overwrite.  It will allow you to hide/show side boxes at min-width from the ADMIN > TOOLS > LAYOUT BOXES CONTROLLER page.  Be sure to back up this file before you upload the template package.
+</p>
+</div>
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="ithree">Step 1: SQL Patches:</h1>
+Necessary SQL Database Patches
+	</div>
+<div class="grey">
+<p>
+<h1>Column Layout Grid</h1>
+The column layout grid module will give you a product listing page in columns rather than rows.  The template pacakge comes with the files already installed.  To complete the installation, you will need to patch your database.
+</p>
+<p class="white green-video">
+<a href="http://www.picaflor-azul.com/index.php?main_page=product_info&amp;cPath=99_101&amp;products_id=14641" target="_blank">Watch an Easy Help Zen Cart Video Tutorial about this step</a>
+</p>
+<p>
+1.  In your Zen Cart admin go to <span class="red">Tools-> Install SQL Patches</span>
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/install-sql.jpg" alt="sql" />
+</p>
+<p>
+2.  Copy and paste the contents of the clg_install.sql file  into the box and click on the "Send" button.  <span class="red">DO NOT INSTALL THE PATCH IF YOU HAVE PREVIOUSLY INSTALLED ONE OF OUR TEMPLATES OR HAVE RUN IT BEFORE</span>
+</p>
+<p>
+Now go to <span class="red">Configuration -> Product Listing</span>
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/readme-product-listing.jpg" alt="product listing" />
+</p>
+<p>
+Click on "Product Listing - Layout Style", select "rows" and click on the "update" button.
+</p>
+<p>
+<h1>Responsive, About Us, Carousel Featured, and Stirling Grand Patches</h1>
+Follow steps 1 and 2 for the about_us.sql patch, the responsive.sql patch, and the stirling_grand.sql patch. <span class="red">DO NOT INSTALL THE responsive.sql OR about_us.sql PATCHES IF YOU HAVE PREVIOUSLY INSTALLED ONE OF OUR TEMPLATES OR HAVE RUN THESE PATCHES BEFORE</span>
+</p>
+<p>
+Go to <span class="red">Configuration -> Define Page Status</span> to define the About us page status.
+</p>
+</div>	
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="itwo">Step 2:  Upload the Files:</h1>
+<h1 id="uone">Method 1: FTP with Filezilla</h1>
+</div>
+
+<div class="grey">
+<p class="green-video white">
+<a href="http://www.picaflor-azul.com/index.php?main_page=product_info&amp;cPath=99_101&amp;products_id=14618" target="_blank">Watch an Easy Help Zen Cart Video Tutorial of step 1 - 4 HERE</a>
+</p>
+1.  Enter the address of the server, your username, password, and port if needed into the top of the Quickconnect bar.<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/images/filezilla.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="filezilla Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+2.  Once you are connected navigate to the directory on your local machine where you unzipped the template package in the right side of window and navigate to your store root directory on your web host in the left side of the window .<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/images/filezilla-1.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="filezilla 1 Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+3.  Drag the includes and renamed admin directory and drop it in the root of your cart.<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/images/filezilla-2.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="filezilla 2 Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+</div>
+
+<div class="border-left">
+<h1 id="utwo">Upload Method 2:  CPanel File Manager</h1>
+</div>
+<div class="grey">
+<p>
+Zip up the includes folder and name it "includes.zip". <br />
+<br />
+1. Select Legacy File Manager:<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/install/file-mamager.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="file mamager Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+2. Select Web Root from the pop up window:<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/install/file-manager-1a.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="file manager 1a Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+3. Click on Upload Files:<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/images/file-manager-2.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="file manager 2 Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+4. Click on Browse and choose upload.zip:<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/images/file-manager-3.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="file manager 3 Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+5. Click on Upload:<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/images/file-manager-4.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="file manager 4 Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+6. Click on upload.zip.  In the Right hand top box, click on extract file contents:<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/images/file-manager-5.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="file manager 5 Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+</div>	
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="ifour">Step 3: Select the Template:</h1>
+</div>	
+<div class="grey">
+<p class="white green-video">
+<a href="http://www.picaflor-azul.com/index.php?main_page=product_info&amp;cPath=99_101&amp;products_id=14618" target="_blank">Watch an Easy Help Zen Cart Video Tutorial about Steps 1-4 HERE</a>
+</p>
+<p>In your Zen Cart admin go to <span class="red">Tools -> Template Selection</span>
+<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/install/template-selection.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="template selection Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+Click on the "edit" button<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/install/template-select.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="template selection edit Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+Select the name of the template you just installed from the drop down menu<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/install/template-select1.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="template selection choose Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+Click on the "update" button.<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/install/template-selection-update.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="template selection update Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /></p>
+</div>
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="ifive">Step 4: Reset the Sideboxes:</h1>
+</div>
+<div class="grey">
+<p class="white green-video">
+<a href="http://www.picaflor-azul.com/index.php?main_page=product_info&amp;cPath=99_101&amp;products_id=14618" target="_blank" >Watch an Easy Help Zen Cart Video Tutorial about Steps 1 -4 HERE</a>
+</p>
+<p>In your Zen Cart admin go to <span class="red">Tools -> Layout Boxes Controller</span><br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/install/template-selection-layout-boxes.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="template selection layout boxes Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+Scroll down to the bottom of the screen and click the "reset" button.<br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/install/template-selection-reset-sideboxes.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="template selection reset sideboxes Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /></p>
+	</div>
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="ifive-a">Step 5: Show Box @Min-Width:</h1>
+Hide Sideboxes on Small Screens
+</div>
+<div class="grey">
+<p>In your Zen Cart admin go to <span class="red">Tools -> Layout Boxes Controller</span><br />
+<br />
+<img src="http://www.picaflor-azul.com/pica/install/template-selection-layout-boxes.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="template selection layout boxes Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /><br />
+<br />
+Select which sideboxes will show on the phone sized device.  I strongly recommend turning ALL of the sideboxes OFF.
+<br />
+<br />
+Find which box you want to turn off and click on the green "e".
+<br /><br />
+Select "OFF" for "Show this Box @ Min-Width" and click on the "update" button.
+<br /><br />
+<img src="http://www.picaflor-azul.com/pica/install/min-width.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" alt="template selection reset sideboxes Easy Help Zen Cart Tutorial&amp;trade;:  How to Install a New Template" /></p>
+	</div>
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+<h1 id="isix">Step 6:  Turn on Header Boxes:</h1>
+EZ Pages Drop Menu and Header Search
+</div>
+<div class="grey">
+<p class="white green-video">
+<a href="http://www.picaflor-azul.com/index.php?main_page=product_info&amp;cPath=99_100&amp;products_id=14640"  target="_blank">Watch an Easy Help Zen Cart Video Tutorial about this step HERE</a>
+</p>
+<p>
+In your zen cart admin  go to <span class="red">Tools -> LayoutBoxes Controller</span>
+</p>
+<p><img src="http://www.picaflor-azul.com/pica/install/template-selection-layout-boxes.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;: How do I remove and/or re arrange the sideboxes?" alt="template selection layout boxes Easy Help Zen Cart Tutorial&amp;trade;: How to Turn on the Header Currencies and Languages in our Free or Paid Templates"  /></p>
+<p>
+Click on "sideboxes/your-template-override-directory/ezpages_drop_menu.php" and then click on the "edit" button
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/images/header-lan.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;: How to Turn on the Header Currencies and Languages in our Free or Paid Templates" alt="header lan Easy Help Zen Cart Tutorial&amp;trade;: How to Turn on the Header Currencies and Languages in our Free or Paid Templates" />
+</p>
+<p>Set the "Single Column Status" to "ON", the "Single Column Sort Order" to something other than "0" , and click on the "update" button.</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/images/header-lan1.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;: How to Turn on the Header Currencies and Languages in our Free or Paid Templates" alt="header lan1 Easy Help Zen Cart Tutorial&amp;trade;: How to Turn on the Header Currencies and Languages in our Free or Paid Templates" />
+</p>
+<p>
+Follow the same procedure for turning on the <span class="red">search_header.php</span> sidebox.
+</p>
+</div>
+</div>
+
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="iseven">Step 7: Admin Settings:</h1>
+Make your site look just like the demo.
+<h1 id="aone">Product Listing</h1>
+</div>
+<div class="grey">
+<p>
+<span class="red">**Please note that this template was designed to look best when the ezpages in header and category tabs in header are turned off**</span> 
+</p>
+<p>
+In your Zen Cart admin go to <span class="red">Configuration -> Product Listing</span>
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/readme-product-listing.jpg"  alt="product listing" />
+</p>
+<p>Copy these values:
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/free-demos/images/product_listing.png" alt="product listing" />
+</p>
+</div>
+
+<div class="border-left">
+	<h1 id="aten">Responsive Layout</h1>
+</div>
+<div class="grey">
+<p>
+In your Zen Cart admin go to <span class="red">Configuration -> Layout Settings</span>
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/layout-settings.jpg" alt="layout settings" />
+</p>
+<p>
+Click on "ACTIVATE Responsive Template by selecting Column Widths" and click on the "edit button"
+</p>
+<p>
+Select "3" and click on the "update" button.
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/responsive-layout.jpg" alt="layout" />
+</p>
+</div>
+
+<div class="border-left">
+	<h1 id="atwo">Layout Settings</h1>
+</div>
+<div class="grey">
+<p>
+In your Zen Cart admin go to <span class="red">Configuration -> Layout Settings</span>
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/layout-settings.jpg" alt="layout settings" />
+</p>
+<p>
+Copy these values: 
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/cf-layoutsetings.png" alt="layout" />
+</p>
+<p class="red">
+This template uses CSS buttons. Make sure that you turn them on!
+</p>
+</div>
+
+<div class="border-left">
+	<h1 id="athree">EZ Pages Header Bar</h1>
+</div>
+<div class="grey">
+<p>
+To turn off EZ pages in the header, go to <span class="red">Configuration -> EZ-Pages Settings</span>
+</p>
+<p><img src="http://www.picaflor-azul.com/pica/install/ezpages-1.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;: How Do I Turn Off the EZ Pages Header Bar?" alt="ezpages 1 Easy Help Zen Cart Tutorial&amp;trade;: How Do I Turn Off the EZ Pages Header Bar?" /></p>
+<p>Select "EZ-Pages Display Status - HeaderBar" and click on the "edit" button.</p>
+<p><img src="http://www.picaflor-azul.com/pica/install/ezpages-2.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;: How Do I Turn Off the EZ Pages Header Bar?" alt="ezpages 2 Easy Help Zen Cart Tutorial&amp;trade;: How Do I Turn Off the EZ Pages Header Bar?" /></p>
+<p>Click on the radio button for "0" and click on the "update" button.</p>
+<p><img src="http://www.picaflor-azul.com/pica/images/ezpages-3.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;: How Do I Turn Off the EZ Pages Header Bar?" alt="ezpages 3 Easy Help Zen Cart Tutorial&amp;trade;: How Do I Turn Off the EZ Pages Header Bar?" /></p>
+</div>
+
+<div class="border-left">
+	<h1 id="athree-a">Carousel Featured Products</h1>
+</div>
+<div class="grey">
+<p>
+To configure the home page carousel featured products, go to <span class="red">Configuration -> Carousel Featured Products</span>
+</p>
+<p><img src="http://www.picaflor-azul.com/pica/install/carlilsle1.png" title="Easy Help Zen Cart Tutorial&amp;trade;" alt="" /></p>
+<p>Click on the option, make your changes, and then click on the "update" button</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/carlisle2.png" title="Easy Help Zen Cart Tutorial&amp;trade;" alt="" />
+</p>
+
+</div>
+
+
+
+</div>
+
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="ieight">Step 8: Add Your Logo:</h1>
+Brand your site
+</div>
+<div class="grey">
+<p class="white green-video">
+<a href="http://www.picaflor-azul.com/index.php?main_page=product_info&amp;cPath=99_109&amp;products_id=14573" target="_blank" >Watch an Easy Help Zen Cart Video Tutorial about this step HERE</a>
+</p>
+<p>Create your logo in your image editing program and upload it to <span class="red">includes/templates/stirling_grand/images</span>.
+</p>
+<p>Open <span class="red">includes/languages/english/stirling_grand/header.php</span> in a plain text editor.  Find this code on or around line 24:</p>
+<p class="white-bk"> <code class="php-black">define(</code><code class="php-blue">'HEADER_ALT_TEXT'</code><code class="php-black">, </code><code class="php-green">'Stirling Grand :: Free Template by www.picaflor-azul.com'</code><code class="php-black">);<br />
+  define(</code><code class="php-blue">'HEADER_LOGO_WIDTH'</code><code class="php-black">, </code><code class="php-green">'235px'</code><code class="php-black">);<br />
+  define(</code><code class="php-blue">'HEADER_LOGO_HEIGHT'</code><code class="php-black">, </code><code class="php-green">'60px'</code><code class="php-black">);<br />
+  define(</code><code class="php-blue">'HEADER_LOGO_IMAGE'</code><code class="php-black">, </code><code class="php-green">'logo.png'</code><code class="php-black">);</code></p>
+<ol>
+<li>Replace "Stirling Grand :: Free Template by www.picaflor-azul.com" with your site name and tag line here</li>
+<li>Replace "235px" with your logo width</li>
+<li>Replace "60px" with your logo height</li>
+<li>Replace "logo.png" with the name of your logo image</li>
+</ol>
+<p class="white-bk"> <code class="php-black">define(</code><code class="php-blue">'HEADER_ALT_TEXT'</code><code class="php-black">, </code><code class="php-green">'Your store name :: your store tag line'</code><code class="php-black">);<br />
+  define(</code><code class="php-blue">'HEADER_LOGO_WIDTH'</code><code class="php-black">, </code><code class="php-green">'height in px'</code><code class="php-black">);<br />
+  define(</code><code class="php-blue">'HEADER_LOGO_HEIGHT'</code><code class="php-black">, </code><code class="php-green">'width in px'</code><code class="php-black">);<br />
+  define(</code><code class="php-blue">'HEADER_LOGO_IMAGE'</code><code class="php-black">, </code><code class="php-green">'your logo name .png'</code><code class="php-black">);</code></p>
+<p><span class="red">***This is a php file and MUST be edited in a plain text editor. If you try to edit this file in any type of wysiwyg editor, the code will be corrupted and when you insert the file back into your zen cart it will break your entire site.***</span></p>
+</div>
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="inine">Step 9: Add Your Tag Line/Slogan:</h1>
+</div>
+<div class="grey">
+<p class="white green-video">
+<a href="http://www.picaflor-azul.com/index.php?main_page=product_music_info&amp;cPath=120_124&amp;products_id=14724" target="_blank">Watch an Easy Help Zen Cart Video Tutorial of this step HERE.</a>
+</p>
+<p>
+In your favorite plain text editor, open the <span class="red">includes/languages/english/stirling_grand/header.php</span>.  
+</p>
+<p>On or around line 25 find this code:</p>
+<p class="white-bk"><code class="php-black">define(</code><code class="php-blue">'HEADER_SALES_TEXT'</code><code class="php-black">,</code><code class="php-green"> 'A Free Template by www.picaflor-azul.com.'</code><code class="php-black">);</code></p>
+<p>Change the text in green to your site tagline, or remove it for no tagline.  Be sure to keep the single quotes intact.</p>
+<p class="white-bk"><code class="php-black">define(</code><code class="php-blue">'HEADER_SALES_TEXT'</code><code class="php-black">,</code><code class="php-green"> 'Your site tagline goe here.'</code><code class="php-black">);</code></p>
+<p>Save the file.</p>
+<p><span class="red">***This is a php file and MUST be edited in a plain text editor. If you try to edit this file in any type of wysiwyg editor, the code will be corrupted and when you insert the file back into your zen cart it will break your entire site.***</span></p>
+</div>		
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="iten">Step 10: Home Page Slideshow:</h1>
+Advertise your products, highlight customer service
+</div>
+<h1 id="ieleven">Add Your Images and Links</h1>
+
+<div class="grey">
+<p> 
+In your zen cart admin go to <span class="red">Tools -> Banner Manager</span>.
+</p> 
+<p> 
+<img src="http://www.picaflor-azul.com/pica/images/banners.jpg" title="Easy Help Zen Cart Tutorial&trade;: How to Set Up a Banner Ad" alt="banners Easy Help Zen Cart Tutorial&trade;: How to Set Up a Banner Ad" /> 
+</p> 
+<p>
+Click on the banner "Slide 1", "Slide 2", "Slide 3", "Slide 4", "Slide 5"
+</p>
+<p>
+Click on the "edit" button
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/slide1-banner.jpg" title="Easy Help Zen Cart Tutorial&trade;: How to Set Up a Banner Ad" alt="banners Easy Help Zen Cart Tutorial&trade;: How to Set Up a Banner Ad" /> 
+</p>
+<p>
+Select "Banner New Window" Yes, or No, Enter your Banner URL in the text box, and Click on the "browse" or "choose file" button and select your image.
+</p>
+<p>
+Click on the "update" button.
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/slide1-banner1.jpg" title="Easy Help Zen Cart Tutorial&trade;: How to Set Up a Banner Ad" alt="banners Easy Help Zen Cart Tutorial&trade;: How to Set Up a Banner Ad" /> 
+</p>
+<p>
+The default slider image size is 550 x 302 pixels.
+</p>
+</div>
+
+	<h1 id="sstwo">Enable/Disable & Set Play Internal:</h1>
+
+</div>
+<div class="grey">
+<p>
+In your zen cart admin go to <span class="red">Configuration -> Stirling Grand</span>
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/res-all-business-menu.jpg" title="Stirling Grand" alt="Stirling Grand" />
+</p>
+<p>
+Click on "Slides JS Slideshow" or "Play Interval".
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/rab-slider-admin.jpg" title="Abbington Mega" alt="Abbington Mega" />
+</p>
+<p>
+To turn the slider on or off on the home page, click on "Slides JS Slideshow".  Select "true" to show the slide show on the home page, or select "false" to hide the hide the slide show on the home page, and click on the update button. 
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/rab-slider-show.jpg" title="Abbington Mega" alt="Abbington Mega" />
+</p>
+<p>
+To set the time between slide animation in milliseconds, click on "Play".  Add the time in milliseconds and click on the update button.
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/rab-slider-interval.jpg" title="Abbington Mega" alt="Abbington Mega" />
+</p>
+</div>
+
+</div>		
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="ieleven-a">Step 11: Customize the Footer:</h1>
+Add Your Social Media Links
+</div>
+<h1 id="fone">Social Media</h1>
+	
+<div class="grey">
+<p class="white green-video">
+<a href="http://www.picaflor-azul.com/index.php?main_page=product_info&amp;cPath=99_110&amp;products_id=14583" target="_blank">Watch an Easy Help Zen Cart Video Tutorial about this step HERE.</a>
+</p>
+<p>
+In a plain text editor open <span class="red">includes/languages/english/extra_definitions/stirling_grand/footer_menu_defines.php</span>
+</p>
+<p>
+On or around line 59 find this code:
+</p>
+<p class="white-bk">
+/*bof bottom footer urls*/
+<br />
+Define('FACEBOOK','<code class="php-green">http://www.facebook.com/Custom.Zen.Cart.Design</code>');
+<br />
+Define('TWITTER', '<code class="php-green">http://www.twitter.com/picaflorazul</code>');
+<br />
+Define('YOUTUBE', '<code class="php-green">http://www.youtube.com/user/ZenCartEasyHelp</code>');
+<br />
+Define('PINTEREST', '<code class="php-green">http://www.pinterest.com/picaflorazul</code>');
+<br />
+Define('GOOGLE', '<code class="php-green">https://plus.google.com/113609090217058276980/posts</code>');
+<br />
+Define('BLOG', '<code class="php-green">http://www.picaflor-azul.com/blog</code>');
+</p>
+<p>
+Change the urls between the single quotes (shown here in green) being careful to keep the single quotes intact.
+</p>
+<p>
+Save the file.
+</p>
+</div>
+
+<div class="border-left">
+<h1 id="ftwo">Customize Social Media Icons</h1>
+</div>
+<div class="grey">
+<p>
+If you want to change the icon used, on or around line 42 find this code:
+</p>
+<p class="white-bk">
+/*bof bottom footer definitions*/
+<br />
+Define('FOOTER_PAYMENT_ICON', '<code class="php-green">paypal.png</code>');
+<br />
+Define('FACEBOOK_ICON', '<code class="php-green">facebook.png</code>');
+<br />
+Define('TWITTER_ICON', '<code class="php-green">twitter.png</code>');
+<br />
+Define('YOUTUBE_ICON', '<code class="php-green">youtube.png</code>');
+<br />
+Define('PINTEREST_ICON', '<code class="php-green">pinterest.png</code>');
+<br />
+Define('GOOGLE_ICON', '<code class="php-green">google.png</code>');
+<br />
+Define('BLOG_ICON', '<code class="php-green">blog.png</code>');
+</p>
+<p>
+Upload your new icons to <span class="red">includes/templates/stirling_grand/images</span> and change the name of the image (shown here in green) being careful to keep the single quotes intact.
+</p>
+</div>
+<div class="border-left">
+<h1 id="fthree">Remove Social Media Links</h1>
+</div>
+<div class="grey">
+<p>
+In your favorite plain text editor open <span class="red">includes/templates/stirling_grand/css/stysheet_footer_menu.css</span>
+</p>
+<p>
+At the bottom of the file add <span class="red">display:none;</span> to the class for each icon you don't want to display.  So, for example if you don't want to display the facebook icon you would add:
+</p>
+<p class="white-bk">
+.facebook{display:none;}
+</p>
+<p>
+The classes used for the icons are:
+</p>
+<p>
+.facebook
+<br />
+.twitter
+<br />
+.youtube
+<br />
+.pinterest
+<br />
+.google
+<br />
+.blog
+</p>
+</div>
+
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="itwelve">Step 12: Add "Useful Links" to Footer:</h1>
+Use EZ Pages to Add Site Content
+	</div>
+<div class="grey">
+<p class="white green-video">
+<a href="http://www.picaflor-azul.com/index.php?main_page=product_info&amp;cPath=99_110&amp;products_id=14583" target="_blank">Watch an Easy Help Zen Cart Video Tutorial of this step HERE.</a>
+</p>
+<p>
+In your zen cart admin go to <span class="red">Tools -> EZ-Pages</span>
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/ezpages-4.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;: How to Add Important Links Into the Footer" alt="ezpages 4 Easy Help Zen Cart Tutorial&amp;trade;: How to Add Important Links Into the Footer" />
+</p>
+<p>
+Create a new file or select one that has already been created.
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/footer-links-3.jpg" title="Easy Help Zen Cart Tutorial&amp;trade;: How to Add Important Links Into the Footer" alt="footer links 3 Easy Help Zen Cart Tutorial&amp;trade;: How to Add Important Links Into the Footer" />
+</p>
+<p>
+Make sure that Footer "Yes" is checked and "Order" is designated.
+</p>
+<p>
+The first 5 pages marked for the footer will show in the footer menu.
+</p>
+	</div>
+</div>
+
+
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="ifourteen">Step 13: Mobile Device Header Menu:</h1>
+Customize text
+</div>
+<div class="grey">
+<p>
+If you want to change the text of any of the header menu headings, edit the <span class="red">includes/languages/english/extra_definitions/stirling_grand/stirling_grand.php</span>
+</p>
+</div>
+
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="ifourteen-a">Step 14: Customize Header Menu:</h1>
+Hide options, customize text and images, etc.
+</div>
+<div class="grey">
+<p>
+If you want to customize the header menu you can change any of the existing text and links in <span class="red">includes/languages/english/extra_definitions/stirling_grand/headermenu.php</span>
+</p>
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+<h1 id="htwo">Turn on Useful Links</h1>
+</div>
+<div class="grey">
+<p>
+This assumes that you have turned on the ezpages_drop_menu.php sidebox.  If you have not done this see "Installation Step 5: Turn on Currencies, Languages, and EZ Pages Drop Menu in Header:"
+</p>
+<p>
+In your zen cart admin go to <span class="red">Tools -> EZ-Pages</span>
+</p>
+<p>
+Turn on the links you want to show in the list.  Be sure that you set a sort order.  See this tutorial for more information:
+</p>
+<p class="white green-video">
+<a href="http://www.picaflor-azul.com/blog/?p=990" target="_blank">Easy Help Tutorial: How to Create EZ Pages &amp; Tips for Usage</a>
+</p>
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+<h1 id="hfive">Hide any of the Drop Downs</h1>
+</div>
+<div class="grey">
+<p>
+You can hide any of the drop down menus by going to <span class="red">includes/templates/stirling_grand/css/stylesheet_mega_menu.css</span>
+</p>
+<p>
+Add a <span class="red">display:none;</span> to the class for the drop down you want to hide.  So, for example, if you wanted to hide contact us you would add this to the bottom of the file:
+</p>
+<p class="white-bk">
+.contactus-li{display:none;}
+</p>
+<p>
+The classes for the drop down menus are as follows:
+</p>
+<p>
+.home-li
+<br />
+.categories-li
+<br />
+.manufacturers-li
+<br />
+.information-li
+<br />
+.contactus-li
+</p>
+	</div>
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="ififteen">To Un-Install the Template:</h1>
+	</div>
+<div class="grey">
+<p>
+Remove all files in the template package.
+</p>
+<p>
+Restore your back up of the admin/layout_controller.php file.
+</p>
+<p>
+Remove the database changes for the Optional Column Layout Grid Module:
+</p>		
+<p>
+In  your zen cart admin go to <span class="red">Tools -> Install SQL Patches</span>
+</p>
+<p>
+<img src="http://www.picaflor-azul.com/pica/install/install-sql.jpg" alt="sql patch" />
+</p>
+<p>
+Paste this in the box and click on the "Send" button.
+</p>
+<p class="white-bk">
+<code>
+delete from configuration where configuration_key in('PRODUCT_LISTING_LAYOUT_STYLE','PRODUCT_LISTING_COLUMNS_PER_ROW');
+<br /><br />
+DELETE FROM configuration WHERE configuration_group_id=25 AND configuration_title='Define About Us Status';
+</code>
+</p>
+	</div>
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="iseventeen">Easy Help Zen Cart Tutorials Index:</h1>
+	</div>
+<div class="grey">
+<p class="white green-video">
+<a href="http://www.picaflor-azul.com/index.php?main_page=page&id=43" target="_blank">Click here for hundreds of video and written Zen Cart Tutorials</a>
+</p>
+</div>
+</div>
+
+
+<div class="wrapper">
+<div class="border-left">
+	<h1 id="isixteen">Files Included in the Template Package:</h1>
+	</div>
+<div class="grey">
+YOUR_ADMIN_FOLDER/layout_controller.php
+<br />
+YOUR_ADMIN_FOLDER/includes/extra_datafiles/stirling_grand.php
+<br />
+YOUR_ADMIN_FOLDER/includes/languages/english/extra_definitions/carousel_featured_defines.php
+<br />
+includes/classes/categories_ul_generator.php
+<br />
+includes/extra_datafiles/about_us_filenames.php
+<br />
+includes/languages/stirling_grand/english.php
+<br />
+includes/languages/english/stirling_grand/aboutus.php
+<br />
+includes/languages/english/stirling_grand/header.php
+<br />
+includes/languages/english/stirling_grand/index.php
+<br />
+includes/languages/english/stirling_grand/metatags.php
+<br />
+includes/languages/english/stirling_grand/button_names.php
+<br />
+includes/languages/english/html_includes/define_about_us.php
+<br />
+includes/languages/english/html_includes/stirling_grand/define_about_us.php
+<br />
+includes/languages/english/html_includes/stirling_grand/define_main_page.php
+<br />
+includes/languages/english/extra_definitions/stirling_grand/stirling_grand.php
+<br />
+includes/languages/english/extra_definitions/stirling_grand/about_us.php
+<br />
+includes/languages/english/extra_definitions/stirling_grand/footer_menu_defines.php
+<br />
+includes/languages/english/extra_definitions/stirling_grand/column_layout_grid_defines.php
+<br />
+includes/languages/english/extra_definitions/stirling_grand/headermenu.php
+<br />
+includes/modules/sideboxes/stirling_grand/ezpages_drop_menu.php
+<br />
+includes/modules/sideboxes/stirling_grand/information.php
+<br />
+includes/modules/sideboxes/stirling_grand/more_information.php
+<br />
+includes/modules/pages/about_us/header_php.php
+<br />
+includes/modules/pages/index/jscript_slides_js.php
+<br />
+includes/modules/stirling_grand/column_right.php
+<br />
+includes/modules/stirling_grand/column_left.php
+<br />
+includes/modules/stirling_grand/featured_products.php
+<br />
+includes/modules/stirling_grand/new_products.php
+<br />
+includes/modules/stirling_grand/product_listing.php
+<br />
+includes/modules/stirling_grand/specials_index.php
+<br />
+includes/templates/stirling_grand/template_info.php
+<br />
+includes/templates/stirling_grand/common/tpl_footer.php
+<br />
+includes/templates/stirling_grand/common/tpl_header.php
+<br />
+includes/templates/stirling_grand/common/html_header.php
+<br />
+includes/templates/stirling_grand/common/tpl_footer_menu.php
+<br />
+includes/templates/stirling_grand/common/tpl_main_page.php
+<br />
+includes/templates/stirling_grand/common/tpl_columnar_display.php
+<br />
+includes/templates/stirling_grand/common/tpl_box_default_left.php
+<br />
+includes/templates/stirling_grand/common/tpl_box_default_right.php
+<br />
+includes/templates/stirling_grand/common/tpl_home_slider.php
+<br />
+includes/templates/stirling_grand/sideboxes/tpl_best_sellers.php
+<br />
+includes/templates/stirling_grand/sideboxes/tpl_search_header.php
+<br />
+includes/templates/stirling_grand/sideboxes/tpl_categories.php
+<br />
+includes/templates/stirling_grand/sideboxes/tpl_document_categories.php
+<br />
+includes/templates/stirling_grand/sideboxes/tpl_ezpages.php
+<br />
+includes/templates/stirling_grand/sideboxes/tpl_information.php
+<br />
+includes/templates/stirling_grand/sideboxes/tpl_more_information.php
+<br />
+includes/templates/stirling_grand/sideboxes/tpl_ezpages_drop_menu.php
+<br />
+includes/templates/stirling_grand/templates/tpl_about_us_default.php
+<br />
+includes/templates/stirling_grand/templates/tpl_ezpages_footer_menu.php
+<br />
+includes/templates/stirling_grand/templates/tpl_index_default.php 
+<br />
+includes/templates/stirling_grand/templates/tpl_product_info_display.php
+<br />
+includes/templates/stirling_grand/templates/tpl_modules_featured_products.php
+<br />
+includes/templates/stirling_grand/templates/tpl_modules_product_listing.php
+<br />
+includes/templates/stirling_grand/templates/tpl_modules_specials_default.php
+<br />
+includes/templates/stirling_grand/templates/tpl_modules_whats_new.php
+<br />
+includes/templates/stirling_grand/templates/tpl_products_next_previous.php
+<br />
+includes/templates/stirling_grand/templates/tpl_index_product_list.php
+<br />
+includes/templates/stirling_grand/templates/tpl_modules_mobile_categories_tabs.php
+<br />
+includes/templates/stirling_grand/templates/tpl_site_map_default.php
+<br />
+includes/templates/stirling_grand/css/index_home.css
+<br />
+includes/templates/stirling_grand/css/print_stylesheet.css
+<br />
+includes/templates/stirling_grand/css/stylesheet.css
+<br />
+includes/templates/stirling_grand/css/stylesheet_css_buttons.css
+<br />
+includes/templates/stirling_grand/css/responsive.css
+<br />
+includes/templates/stirling_grand/css/stylesheet_back_to_top.css
+<br />
+includes/templates/stirling_grand/css/stylesheet_betterCategoriesEzInfo.css
+<br />
+includes/templates/stirling_grand/css/stylesheet_mega_menu.css
+<br />
+includes/templates/stirling_grand/css/stylesheet_footer_menu.css
+<br />
+includes/templates/stirling_grand/css/stylesheet_slides.css
+<br />
+includes/templates/stirling_grand/jscript/jscript_jquery.min.js
+<br />
+includes/templates/stirling_grand/jscript/back_to_top_min.js
+<br />
+includes/templates/stirling_grand/jscript/script.js
+<br />
+includes/templates/stirling_grand/jscript/css_browser_selector.js
+<br />
+includes/templates/stirling_grand/jscript/jquery.carouFredSel-6.0.2.js
+
+	</div>
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+<h1 id="four">Credits &amp; License</h1>
+People who make this project possible
+</div>
+<div class="left grey">
+<span class="red">Special Thanks:</span>
+<ul class="no-dot">     
+<li>The Zen Cart Team</li>
+<li>rbarbour and the Responsive DIY Template Default for 1.5.x</li>
+<li>The jQuery Foundation</li>
+<li>Nathan Searles Slides JS http://www.slidesjs.com</li>
+<li>stevefriedman71 and DrByte for the Column Layout Grid Module</li>
+<li>Clyde Jones for the Footer Menu Module</li>
+<li>torvista and DrByte for the About Us Page Module</li>
+<li>Glen Herbert and ginginca for the Shopping Cart Totals In Header</li>
+<li>AddThis Social Bookmarking</li>
+<li>Rafael Lima for the CSS Browser Selector http://rafael.adm.br/css_browser_selector</li>
+<li>mbfergie for the Tabbed Home Page Modules Module</li>
+<li>Get Em Fast for the CSS Horizontal Dropdown Menu With Jquery Module</li>
+<li>Back to Top www.myjqueryplugins.com - www.alpixel.fr</li>
+<li>Tessa Thornton http://webdesign.tutsplus.com/tutorials/site-elements/big-menus-small-screens-responsive-multi-level-navigation</li>
+<li>http://www.publicdomainpictures.net Petr Kratochvil</li>
+<li>Carousel Featured Products by kamelion0927</li>
+</ul>
+</div>
+<div class="right grey">
+<p>
+The Stirling Grand Free Zen Cart Template is released under the General Public License (see LICENSE.txt)
+</p>
+<p>
+This script is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</p>
+<p>
+Always backup your shop and database before making changes.
+</p>
+</div>
+<div class="clearBoth"></div>
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+<h1 id="five" >Free Zen Cart Templates by Picaflor Azul</h1>
+Start your ecommerce site on a shoestring
+</div>
+<table cellpadding="10" cellspacing="10" id="table">
+<tr class="grey-bk">
+<td class="centered-text white">
+  <a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&amp;template_switch_id=apparel_boutique" target="_blank"><img src="http://www.picaflor-azul.com/pica/install/apparel_boutique-sm.jpg" alt="apparel boutique"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&amp;template_switch_id=apparel_boutique"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=14320"  target="_blank">Download!</a></div>
+</td> 
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&amp;template_switch_id=andover_modern"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/andover-sm.jpg" alt="andover modern" /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&amp;template_switch_id=andover_modern"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=14322"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&amp;template_switch_id=alysa_rounded"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/alysa-sm.jpg" alt="alysa rounded" /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&amp;template_switch_id=alysa_rounded"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=14321"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&amp;template_switch_id=avonlee_contempo"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/avonlee-sm.jpg"  alt="avonlee contempo" /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&amp;template_switch_id=avonlee_contempo"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=14318"  target="_blank">Download!</a></div>
+</td>
+</tr>
+
+<tr>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&amp;template_switch_id=ashley_pink"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/ashley-sm.jpg" alt="ashley pink"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&amp;template_switch_id=ashley_pink"  target="_blank">LiveDemo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=14319"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&amp;template_switch_id=aberdeen_neutral"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/aberdeen-sm.jpg"  alt="aberdeen neutral" /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&amp;template_switch_id=aberdeen_neutral"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=14323"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=a_pink_boutique"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/a_pink-sm.jpg" alt="a pink boutique" /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=a_pink_boutique"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=14325"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=an_upscale_boutique"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/an_upscale-sm.jpg" alt="upsacale boutique"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=an_upscale_boutique"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=14326"  target="_blank">Download!</a></div>
+</td>
+</tr>
+<tr class="grey-bk">
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=all_business"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/3column-sm.jpg" height="200" width="200" alt="All Business"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=all_business"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=14324"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=abbington_mega"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/abbington200.jpg" height="200" width="200" alt="abbington mega"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=abbington_mega"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15035"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=cambridge_pro"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/200cambridge_pro.jpg" height="200" width="200" alt="cambridge pro"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=cambridge_pro"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15039"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=lancaster_lux"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/lancaster200.jpg" height="200" width="200" alt="lancaster lux"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=lancaster_lux"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&amp;cPath=27&amp;products_id=15040"  target="_blank">Download!</a></div>
+</td>
+</tr>
+<tr>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=preston_elite"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/200preston_elite.jpg" height="200" width="200" alt="preston elite"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=preston_elite"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15041"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=oxford_dark"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/200oxford_dark.jpg" height="200" width="200" alt="oxford dark"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=oxford_dark"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15042"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=newport_eco"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/200newport.jpg" height="200" width="200" alt="abbington mega"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=newport_eco"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15043"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=piccadilly_posh"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/200piccadilly_posh.jpg" height="200" width="200" alt="piccadilly posh"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=piccadilly_posh"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15044"  target="_blank">Download!</a></div>
+</td>
+</tr>
+
+<tr>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=london_grunge"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/200london_grunge.jpg" height="200" width="200" alt="london grunge"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=london_grunge"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15045"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=brighton_pets"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/200brighton_pets.jpg" height="200" width="200" alt="brighton pets"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=brighton_pets"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15046"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=hampshire_cammie"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/200hampshire_cammie.jpg" height="200" width="200" alt="hampshire cammie"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=hampshire_cammie" target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15048"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=bentley_classic"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/200bentley_classic.jpg" height="200" width="200" alt="Bentley Classic"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=bentley-classic" target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15049"  target="_blank">Download!</a></div>
+</td>
+</tr>
+<tr>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=yorkshire_clean"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/200yorkshire_clean.jpg" height="200" width="200" alt="Yorkshire Clean"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=yorkshire_clean"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15050"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=bradford_pure"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/200bradford_pure.jpg" height="200" width="200" alt="bradford pure"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=bradford_pure"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15054"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=bristol_lace"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/200bristol_lace.jpg" height="200" width="200" alt="Bristol Lace"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=bristol_lace" target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15056"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=abbington_mega"  target="_blank"><img src="http://www.picaflor-azul.com/pica/images/pure-css-menu.jpg" height="200" width="200" alt="Pure CSS Mega Menu"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=abbington_mega" target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15057"  target="_blank">Download!</a></div>
+</td>
+</tr>
+<tr>
+<td class="centered-text white">
+<a href="http://www.bookworm-garden.com/demos/templates1/index.php?main_page=index&template_switch_id=14908"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/homepage-slide-content-hover.jpg" height="200" width="200" alt="Homepage Slide Content Hover"  /></a>
+<div class="brown"><a href="http://www.bookworm-garden.com/demos/templates1/index.php?main_page=index&template_switch_id=14908" target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15058"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=sheffield_blue"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/200sheffield_blue.jpg" height="200" width="200" alt="Sheffield Blue"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=sheffield_blue"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15059"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=stirling_grand"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/slidesjs.jpg" height="200" width="200" alt="Slides JS"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=stirling_grand"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15060"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=sheffield_blue"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/social_networking_sidebar.jpg" height="200" width="200" alt="Slides JS"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=sheffield_blue"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15061"  target="_blank">Download!</a></div>
+</td>
+</tr>
+<tr>
+<tr>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=bradford_pure"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/tabbed_home_page_modules.jpg" height="200" width="200" alt="Slides JS"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=bradford_poure"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15062"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.bookworm-garden.com/demos/templates1/index.php?main_page=index&template_switch_id=14874"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/css3_breadcrumbs.png" height="200" width="200" alt="Slides JS"  /></a>
+<div class="brown"><a href="http://www.bookworm-garden.com/demos/templates1/index.php?main_page=index&template_switch_id=14874"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15063"  target="_blank">Download!</a></div>
+</td>
+<td class="centered-text white">
+<a href="http://www.bookworm-garden.com/demos/templates1/index.php?main_page=index&template_switch_id=14874"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/200sliding_home_images.png" height="200" width="200" alt="Slides JS"  /></a>
+<div class="brown"><a href="http://www.bookworm-garden.com/demos/templates1/index.php?main_page=index&template_switch_id=14874"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15064"  target="_blank">Download!</a></div>
+</td>
+<td  class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=glasgow_neat"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/200glasgow_neat.jpg" height="200" width="200" alt="Slides JS"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=glasgow_neat"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15066"  target="_blank">Download!</a></div>
+</td>
+</tr>
+<tr>
+<td class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=glasgow_neat"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/back_to_top.jpg" height="200" width="200" alt="Slides JS"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=glasgow_neat"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15067"  target="_blank">Download!</a></div>
+</td>
+<td  class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=glasgow_neat"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/rotating_image_slider.jpg" height="200" width="200" alt="Slides JS"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/index.php?main_page=index&template_switch_id=glasgow_neat"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/index.php?main_page=document_product_info&cPath=27&products_id=15068"  target="_blank">Download!</a></div>
+</td>
+<td  class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-zen-cart-templates-modules-plugins-addons/homepage-layout-with-css3-hover-effects-8-variations"  target="_blank"><img src="http://www.picaflor-azul.com/pica/install/homepage_layout_with_hover_effects.jpg" height="200" width="200" alt="Homepage hover effects"  /></a>
+<div class="brown"><a href="http://www.picaflor-azul.com/free-demos/hover_effects/index.html"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/free-zen-cart-templates-modules-plugins-addons/homepage-layout-with-css3-hover-effects-8-variations"  target="_blank">Download!</a></div>
+</td>
+<td  class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-zen-cart-templates-modules-plugins-addons/responsive-all-business-free-zen-cart-template"  target="_blank"><img src="http://www.picaflor-azul.com/images/res-all-business-400.jpg" height="200" width="200" alt="Homepage hover effects"  /></a>
+<div class="brown"><a href="http://zenlyzen.com/responsive/index.php?main_page=index&template_switch_id=responsive_all_business"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/free-zen-cart-templates-modules-plugins-addons/responsive-all-business-free-zen-cart-template"  target="_blank">Download!</a></div>
+</td>
+</tr>
+
+<tr>
+<td  class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-zen-cart-templates-modules-plugins-addons/responsive-apparel-boutique-free-zen-cart-template"  target="_blank"><img src="http://www.picaflor-azul.com/images/res-app_boutique_400.jpg" height="200" width="200" alt="Responsive Apparel Boutique"  /></a>
+<div class="brown"><a href="http://zenlyzen.com/responsive/index.php?main_page=index&template_switch_id=responsive_apparel_boutique"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/free-zen-cart-templates-modules-plugins-addons/responsive-apparel-boutique-free-zen-cart-template"  target="_blank">Download!</a></div>
+</td>
+<td  class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-zen-cart-templates-modules-plugins-addons/responsive-carlisle-fresh-free-zen-cart-template"  target="_blank"><img src="http://www.picaflor-azul.com/images/carlisle_fresh400.jpg" height="200" width="200" alt="Carlisle Fresh"  /></a>
+<div class="brown"><a href="http://zenlyzen.com/responsive_demo"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/free-zen-cart-templates-modules-plugins-addons/responsive-carlisle-fresh-free-zen-cart-template"  target="_blank">Download!</a></div>
+</td>
+<td  class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-zen-cart-templates-modules-plugins-addons/responsive-sheffield-blue-free-zen-cart-template"  target="_blank"><img src="http://www.picaflor-azul.com/images/responsive_sheffield_blue400.jpg" height="200" width="200" alt="Responsive Sheffield Blue"  /></a>
+<div class="brown"><a href="http://zenlyzen.com/responsive/index.php?main_page=index&template_switch_id=responsive_sheffield_blue"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/free-zen-cart-templates-modules-plugins-addons/responsive-sheffield-blue-free-zen-cart-template"  target="_blank">Download!</a></div>
+</td>
+<td  class="centered-text white">
+<a href="http://www.picaflor-azul.com/free-zen-cart-templates-modules-plugins-addons/responsive-avonlee_contempo-free-zen-cart-template"  target="_blank"><img src="http://www.picaflor-azul.com/images/responsive_avonlee_contempo400.jpg" height="200" width="200" alt="Responsive Avonlee Contempo"  /></a>
+<div class="brown"><a href="http://www.zenlyzen.com/responsive_zen_cart/index.php?main_page=index&template_switch_id=responsive_avonlee_contempo"  target="_blank">Live Demo</a></div>
+<div class="green"><a href="http://www.picaflor-azul.com/free-zen-cart-templates-modules-plugins-addons/responsive-avonlee_contempo-free-zen-cart-template"  target="_blank">Download!</a></div>
+</td>
+
+
+
+</tr>
+
+</table>
+</div>
+
+<div class="wrapper">
+<div class="border-left">
+<h1 id="six">Bugs &amp; Updates</h1>
+Help us to continually improve the package
+</div>
+<div class="left center">
+<a href="http://www.picaflor-azul.com/index.php?main_page=contact_us"><img src="http://www.picaflor-azul.com/pica/install/email.png" alt="email"  /></a>
+<br />
+<a href="http://www.picaflor-azul.com/index.php?main_page=contact_us">Contact us to report problems.</a>
+</div>
+<div class="right grey">
+10/04/2013-------First Release 1.0
+</div>
+<div class="clearBoth"></div>
+
+</div>
+
+
+</div>
+</div>
+</div>
+</body>
+</html>

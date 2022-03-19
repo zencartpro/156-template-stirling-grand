@@ -1,0 +1,165 @@
+Responsives Template Stirling Grand 1.4 für Zen Cart 1.5.6 deutsch
+
+Anpassung des Templates Stirling Grand (https://www.zen-cart.com/downloads.php?do=file&id=1752) von picaflor-azul für die deutsche Zen Cart Version 1.5.6
+
+Demo des Templates:
+http://stirlinggrand156.zencartdemo.at
+
+Originaltemplate von:
+www.picaflor-azul.com
+
+
+Diese Version ist ausschließlich für die deutsche Zen Cart Version 1.5.6 geeignet!
+
+Änderungen gegenüber dem Original Template
+- AddThis entfernt
+- Installer multilingual
+- Anpassungen an die Orginaldateien der deutschen Zen Cart Version 1.5.6
+- fehlende Dateien ergänzt
+- deutsche Anleitung
+- Das in diesem Template vorgesehene Kontaktformular im Hauptmenü ist eine Spamschleuder und daher im stylesheet_mega_menu.css deaktiviert
+- Uninstaller hinzugefügt
+
+Dieses Template beinhaltet einige Zusatzmodule:
+- Karussel der empfohlenen Artikel
+- Define Page About Us (Über uns)
+
+Sollten im Shop bereits diese Module vorhanden sein, deinstallieren Sie diese Module komplett, bevor Sie das Template installieren!
+
+Wenn Sie Stirling Grand bereits in einem 1.5.5 Shop aktiv haben und diesen auf 1.5.6 updaten wollen, dann führen Sie zunächst ein Update auf 1.5.6 durch.
+Danach entfernen Sie wie ganz unten unter DEINSTALLATION beschrieben mit der uninstall.sql im Ordner SQL alle Datenbankeinträge des Templates.
+Danach gehen Sie so vor wie unter INSTALLATION beschrieben und richten Stirling Grand neu ein.
+
+____________________________________________________________________________________________________
+
+
+INSTALLATION
+
+WICHTIGE HINWEISE
+
+Erst in einem Testsystem installieren und nicht direkt in einem Liveshop!
+
+Vor der Installation dieses Templates machen Sie eine komplette Sicherung Ihrer Shopdateien und Ihrer Datenbank!
+
+Sie haben eine Sicherung gemacht?
+Sie haben einen Testshop einsatzbereit?
+
+Dann lesen Sie weiter.
+
+Wenn Sie Stirling Grand bereits in einem 1.5.5 Shop aktiv haben und diesen auf 1.5.6 updaten wollen, dann führen Sie zunächst ein Update auf 1.5.6 durch.
+Danach entfernen Sie wie ganz unten unter DEINSTALLATION beschrieben mit der uninstall.sql im Ordner SQL alle Datenbankeinträge des Templates.
+Danach gehen Sie so vor wie unter INSTALLATION beschrieben und richten Stirling Grand neu ein.
+
+Sollten Sie in Ihrem Shop bereits das Template Winchester Black oder Winchester Responsive installiert haben und nun auf Stirling Grand umsteigen wollen, dann entfernen Sie zunächst Winchester Responsive und Winchester Black komplett, bevor Sie Stirling Grand installieren!
+Gleiches gilt für andere responsive Templates dieser Art wie z.B. Sheffield Blue.
+Die Templates bringen teilweise dieselben Zusatzfunktionalitäten mit und es wird zu Problemen führen, wenn Sie mehrere Templates dieser Art gleichzeitig zu installieren versuchen.
+Bevor Sie Stirling Grand installieren entfernen Sie also zunächst falls installiert die Templates Winchester Responsive, Winchester Black, Sheffield Blue oder andere picaflor-azul Templates!
+
+Die Installation erfolgt in folgenden Schritten, halten Sie diesen Ablauf ein:
+
+1)
+Im Ordner GEAENDERTE DATEIEN den Ordner DEINADMIN auf den Namen des Adminverzeichnisses umbenennen.
+Dann in der vorgegebenen Struktur ins Shopverzeichnis hochladen.
+Dabei wird eine bestehende Datei überschrieben.
+Legen Sie sich also vorher eine Sicherung folgender Datei an, damit sie sie später wieder einspielen können falls Sie das Template entfernen wollen
+DEINADMIN/layout_controller.php
+
+
+2)
+Im Ordner NEUE DATEIEN den Ordner DEINADMIN auf den Namen des Adminverzeichnisses umbenennen.
+Dann in der vorgegebenen Struktur ins Shopverzeichnis hochladen
+
+3)
+Hinweis: Die Dateien in includes/templates/stirling_grand und in inclues/modules/stirling_grand müssen Sie möglicherweise später nochmal mit den entsprechenden Dateien von Modulen vergleichen, die Sie bereits im Shop integriert haben und deren Änderungen nachziehen.
+Dieses Paket enthält die auf Zen Cart 1.5.6 deutsch angepassten Templatedateien und Moduldateien einer unveränderten Grundinstallation. 
+Wenn Sie Module installiert haben, die diese Templatedateien oder Moduldateien geändert haben, dann vergleichen Sie diese Dateien mit Tools wie Beyond Compare oder WinMerge mit den Templatefiles aus den entsprechenden Modulen.
+
+4)
+Die install.sql im Ordner SQL mit einem Texteditor öffnen, Inhalt kopieren und ins Eingabefeld unter Tools > SQL Patches installieren einfügen und absenden
+Dadurch werden die nötigen Datenbankeinträge vorgenommen
+
+5)
+In der Zen Cart Administration unter Tools Templates das neue Stirling Grand Template aus dem Dropdown auswählen und aktivieren.
+
+6)
+Unter Tools Boxlayout clicken Sie nun auf den Button Zurücksetzen, dadurch werden die in diesem Template möglichen Sideboxen automatisch voreingestellt.
+
+7)
+Stellen Sie nun die Sideboxen ein, die Sie anzeigen wollen und stellen Sie dabei die Einstellung Show Box @ Min-Width immer auf Aus.
+Diese Einstellung regelt die Anzeige von Sideboxen für mobile Geräte und für die sollten die Sideboxen immer aus sein.
+Mit folgendem Befehl unter Tools > SQL Patches installieren können Sie alle Werte von Show Box @ Min-Width auf einen Schlag von 1 auf 0 setzen:
+update layout_boxes set show_box_min_width = replace(show_box_min_width,'1','0');
+
+8)
+Aktivieren Sie die sidebox languages_header mit der Einstellung
+Linke/Rechte Spalte: AUS
+Einzelne Spalte Status: EIN
+
+Aktivieren Sie die sidebox currencies_header mit der Einstellung
+Linke/Rechte Spalte: AUS
+Einzelne Spalte Status: EIN
+
+Aktivieren Sie die sidebox search_header mit der Einstellung
+Linke/Rechte Spalte: AUS
+Einzelne Spalte Status: EIN
+
+Aktivieren Sie die sidebox ez_pages_drop_menu mit der Einstellung
+Linke/Rechte Spalte: AUS
+Einzelne Spalte Status: EIN
+
+
+____________________________________________________________________________________________________
+
+
+Konfigurationsmöglichkeiten / Anpassung an eigene Wünsche
+
+____________________________________________________________________________________________________
+
+
+Logo austauschen
+includes/templates/stirling_grand/images/logo.png überschreiben
+
+____________________________________________________________________________________________________
+
+
+Slogan unter Logo ändern
+includes/languages/german/stirling_grand/header.php
+define('HEADER_SALES_TEXT', 'Stirling Grand Template Demo');
+
+____________________________________________________________________________________________________
+
+
+Konfiguration > Stirling Grand
+
+Slideshow auf der Startseite
+Standardmäßig aktiv
+
+Weitere Einstellungsmöglichkeiten sind dort erklärt
+____________________________________________________________________________________________________
+
+
+Karussell der empfohlenen Artikel auf der Startseite
+
+Standardmäßig aktiv.
+Es müssen dafür natürlich Empfohlene Artikel angelegt sein.
+Einstellungen dazu unter Konfiguration Karussell der Empfohlenen Artikel 
+
+____________________________________________________________________________________________________
+
+Slideshow auf der Startseite:
+bannergesteuert unter Tools > Bannermanager
+Beispielbilder austauschen unter images/banners
+
+____________________________________________________________________________________________________
+
+Weitere Infos und Konfigurationsbeispiele in der englischen Original Anleitung im Ordner DOKU ENGLISH
+
+____________________________________________________________________________________________________
+
+
+DEINSTALLATION
+Um das Template komplett zu entfernen, die uninstall.sql im Ordner SQL mit einem Texteditor öffnen, Inhalt kopieren und ins Eingabefeld unter Tools > SQL Patches installieren einfügen und absenden
+Dadurch werden alle neuen Datenbankeinträge, die dieses Template vorgenommen hat entfernt.
+Das im Shop aktive Template wird auf das 1.5.6 Standardtemplate responsive_classic zurückgestellt mit dessen Standardeinstellungen.
+Nun entfernen Sie alle von diesem Template neu angelegten Dateien und ersetzen die von diesem Template geänderten Dateien wieder mit den entsprechenden 1.5.6 Originaldateien bzw. den entsprechenden Dateien Ihres zuvor angelegten Backups.
+
